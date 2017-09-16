@@ -10,28 +10,23 @@ echo "---" #menubar icon
 #echo "Bell Schedule | color=black"
 #current time in unix time
 #SCHEDULE SELECT#################################################################################
-oneAsh="1"
+oneAsh="0"
 twoAsh="0"   #023456789
 threeABsh="0"
 fiveAsh="0"
-sixAsh="0"
-
-
+sixAsh="1"
 oneA=$oneAsh
 twoA=$twoAsh
 threeAB=$threeABsh
 fiveA=$fiveAsh
 sixA=$sixAsh
 
-
 echo "Schedule |color=black"
-echo "--1A|bash =/Users/Mike/Desktop/Media/bitbar/support/oneAscript.sh terminal=false"
-echo "--2A|bash =/Users/Mike/Desktop/Media/bitbar/support/twoAscript.sh terminal=false"
-echo "--3AB|bash =/Users/Mike/Desktop/Media/bitbar/support/threeABscript.sh terminal=false"
-echo "--5A|bash =/Users/Mike/Desktop/Media/bitbar/support/fiveAscript.sh terminal=false"
-echo "--6A|bash =/Users/Mike/Desktop/Media/bitbar/support/sixAscript.sh terminal=false"
-
-
+echo "--1A|bash =~/Desktop/Media/bitbar/support/oneAscript.sh"
+echo "--2A|bash =~/Desktop/Media/bitbar/support/twoAscript.sh"
+echo "--3AB|bash =~/Desktop/Media/bitbar/support/threeABscript.sh"
+echo "--5A|bash =~/Desktop/Media/bitbar/support/fiveAscript.sh"
+echo "--6A|bash = ~/Desktop/Media/bitbar/support/sixAscript.sh"
 
 hours="$(date +%H)"
 hours=${hours#0}
@@ -45,291 +40,24 @@ sec="$(date +%S)"
 sec=${sec#0}
 sumsec=$(($hourssec + $minssec + $sec))
 
-if [[ ! $(( sumsec )) < "2880" && ! $(( sumsec )) > "5322" ]]; then
-sumsec="0"
-echo "Invalid Time Frame"
-fi
-
-#period start and end values in unix time
-if [[ $oneA == "0" ]]; then
-prdStart1="28800"
-prdEnd1="31260"
-prdStart2="31500"
-prdEnd2="33960"
-prdStart3="34200"
-prdEnd3="37020"
-prdStart4="37260"
-prdEnd4="39720"
-prdStart5="39960"
-prdEnd5="42420"
-prdStart6="42660"
-prdEnd6="45120"
-prdStart7="45360"
-prdEnd7="47820"
-prdStart8="48060"
-prdEnd8="50520"
-prdStart9="50760"
-prdEnd9="53220"
-#prdStartt="76800"
-#prdEndt="84780" #test times
-fi
-if [[ $twoA == "0" ]]; then
-prdStart1="28800"
-prdEnd1="31260"
-prdStart2="31440"
-prdEnd2="33840"
-prdStartHR="34080"
-prdEndHR="34620"
-prdStart3="34860"
-prdEnd3="37260"
-prdStart4="37500"
-prdEnd4="39900"
-prdStart5="40140"
-prdEnd5="42540"
-prdStart6="42780"
-prdEnd6="45180"
-prdStart7="45420"
-prdEnd7="47820"
-prdStart8="48060"
-prdEnd8="50460"
-prdStart9="50700"
-prdEnd9="53100"
-fi
-##################figure out what period it is 1a#############################################
-#prd1
+#1A
 if [[ $oneA == "1" ]]; then
-if [[ ! $(( sumsec )) < "$prdStart1" && ! $(( sumsec )) > "$prdEnd1" ]]; then
-firstperiod="1"
-tdiff=$((prdEnd1 - sumsec))
+/bin/bash ~/Desktop/Media/bitbar/support/figprd1.sh
 fi
-#prd2
-if [[ ! $(( sumsec )) < "$prdStart2" && ! $(( sumsec )) > "$prdEnd2" ]]; then
-secondperiod="1"
-tdiff=$((prdEnd2 - sumsec))
-fi
-#prd3
-if [[ ! $(( sumsec )) < "$prdStart3" && ! $(( sumsec )) > "$prdEnd3" ]]; then
-thirdperiod="1"
-tdiff=$((prdEnd3 - sumsec))
-fi
-#prd4
-if [[ ! $(( sumsec )) < "$prdStart4" && ! $(( sumsec )) > "$prdEnd4" ]]; then
-fourthperiod="1"
-tdiff=$((prdEnd4 - sumsec))
-fi
-#prd5
-if [[ ! $(( sumsec )) < "$prdStart5" && ! $(( sumsec )) > "$prdEnd5" ]]; then
-fifthperiod="1"
-tdiff=$((prdEnd5 - sumsec))
-fi
-#prd6
-if [[ ! $(( sumsec )) < "$prdStart6" && ! $(( sumsec )) > "$prdEnd6" ]]; then
-sixthperiod="1"
-tdiff=$((prdEnd6 - sumsec))
-fi
-#prd7
-if [[ ! $(( sumsec )) < "$prdStart7" && ! $(( sumsec )) > "$prdEnd7" ]]; then
-seventhperiod="1"
-tdiff=$((prdEnd7 - sumsec))
-fi
-#prd8
-if [[ ! $(( sumsec )) < "$prdStart8" && ! $(( sumsec )) > "$prdEnd8" ]]; then
-eighthperiod="1"
-tdiff=$((prdEnd8 - sumsec))
-fi
-#prd9
-if [[ ! $(( sumsec )) < "$prdStart9" && ! $(( sumsec )) > "$prdEnd9" ]]; then
-ninthperiod="1"
-tdiff=$((prdEnd9 - sumsec))
-fi
-##prdt for testing
-#if [[ ! $(( sumsec )) < "$prdStartt" && ! $(( sumsec )) > "$prdEndt" ]]; then
-#tperiod="1"
-#tdiff=$((prdEndt - sumsec))
-#fi
-# finding difference between current and end of period and echoing it at top of window
-((sec=tdiff%60, tdiff/=60, min=tdiff%60, hrs=tdiff/60))
-tdiffformat=$(printf "%d:%02d:%02d" $hrs $min $sec)
-if [[ $hrs == "0" ]]; then 
-tdiffformat=$(printf "%02d:%02d" $min $sec)
-echo "Time Remaining: $tdiffformat | color = black"
-fi
-#echo "Time Remaining: $tdiffformat | color = black"
-fi
-########################Highlighting the current period 1a##########################################
-if [[ $oneA == "1" ]]; then
-if [[ $firstperiod == "1" ]]; then
-echo "1                8:00       8:41 | color = black"
-else
-echo "1                8:00       8:41"
-fi
-if [[ $secondperiod == "1" ]]; then
-echo "2               8:45       9:26 | color = black"
-else
-echo "2               8:45       9:26"
-fi
-if [[ $thirdperiod == "1" ]]; then
-echo "3               9:30      10:17 | color = black"
-else
-echo "3               9:30      10:17"
-fi
-if [[ $fourthperiod == "1" ]]; then
-echo "4              10:21      11:02 | color = black"
-else
-echo "4              10:21      11:02"
-fi
-if [[ $fifthperiod == "1" ]]; then
-echo "5              11:06      11:47 | color = black"
-else
-echo "5              11:06      11:47"
-fi
-if [[ $sixthperiod == "1" ]]; then
-echo "6              11:51      12:32 | color = black"
-else
-echo "6              11:51      12:32"
-fi
-if [[ $seventhperiod == "1" ]]; then
-echo "7              12:36       1:17 | color = black"
-else
-echo "7              12:36       1:17"
-fi
-if [[ $eighthperiod == "1" ]]; then
-echo "8                1:21       2:02 | color = black"
-else
-echo "8                1:21       2:02"
-fi
-if [[ $ninthperiod == "1" ]]; then
-echo "9               2:06       2:47 | color = black"
-else
-echo "9               2:06       2:47"
-fi
-fi
-
-##################figure out what period it is 2a#############################################
+#2A
 if [[ $twoA == "1" ]]; then
-#prd1
-if [[ ! $(( sumsec )) < "$prdStart1" && ! $(( sumsec )) > "$prdEnd1" ]]; then
-firstperiod="1"
-tdiff=$((prdEnd1 - sumsec))
+/bin/bash ~/Desktop/Media/bitbar/support/figprd2.sh
 fi
-#prd2
-if [[ ! $(( sumsec )) < "$prdStart2" && ! $(( sumsec )) > "$prdEnd2" ]]; then
-secondperiod="1"
-tdiff=$((prdEnd2 - sumsec))
+#3AB
+if [[ $threeAB == "1" ]]; then
+/bin/bash ~/Desktop/Media/bitbar/support/figprd3.sh
 fi
-#prd2
-if [[ ! $(( sumsec )) < "$prdStartHR" && ! $(( sumsec )) > "$prdEndHR" ]]; then
-homeroomperiod="1"
-tdiff=$((prdEndHR - sumsec))
+#5A
+if [[ $fiveA == "1" ]]; then
+/bin/bash ~/Desktop/Media/bitbar/support/figprd5.sh
 fi
-#prd3
-if [[ ! $(( sumsec )) < "$prdStart3" && ! $(( sumsec )) > "$prdEnd3" ]]; then
-thirdperiod="1"
-tdiff=$((prdEnd3 - sumsec))
-fi
-#prd4
-if [[ ! $(( sumsec )) < "$prdStart4" && ! $(( sumsec )) > "$prdEnd4" ]]; then
-fourthperiod="1"
-tdiff=$((prdEnd4 - sumsec))
-fi
-#prd5
-if [[ ! $(( sumsec )) < "$prdStart5" && ! $(( sumsec )) > "$prdEnd5" ]]; then
-fifthperiod="1"
-tdiff=$((prdEnd5 - sumsec))
-fi
-#prd6
-if [[ ! $(( sumsec )) < "$prdStart6" && ! $(( sumsec )) > "$prdEnd6" ]]; then
-sixthperiod="1"
-tdiff=$((prdEnd6 - sumsec))
-fi
-#prd7
-if [[ ! $(( sumsec )) < "$prdStart7" && ! $(( sumsec )) > "$prdEnd7" ]]; then
-seventhperiod="1"
-tdiff=$((prdEnd7 - sumsec))
-fi
-#prd8
-if [[ ! $(( sumsec )) < "$prdStart8" && ! $(( sumsec )) > "$prdEnd8" ]]; then
-eighthperiod="1"
-tdiff=$((prdEnd8 - sumsec))
-fi
-#prd9
-if [[ ! $(( sumsec )) < "$prdStart9" && ! $(( sumsec )) > "$prdEnd9" ]]; then
-ninthperiod="1"
-tdiff=$((prdEnd9 - sumsec))
-fi
-##prdt for testing
-#if [[ ! $(( sumsec )) < "$prdStartt" && ! $(( sumsec )) > "$prdEndt" ]]; then
-#tperiod="1"
-#tdiff=$((prdEndt - sumsec))
-#fi
-# finding difference between current and end of period and echoing it at top of window
-((sec=tdiff%60, tdiff/=60, min=tdiff%60, hrs=tdiff/60))
-tdiffformat=$(printf "%d:%02d:%02d" $hrs $min $sec)
-if [[ $hrs == "0" ]]; then 
-tdiffformat=$(printf "%02d:%02d" $min $sec)
-echo "Time Remaining: $tdiffformat | color = black"
-fi
-#echo "Time Remaining: $tdiffformat | color = black"
-
+#5A
+if [[ $sixA == "1" ]]; then
+/bin/bash ~/Desktop/Media/bitbar/support/figprd6.sh
 fi
 
-########################Highlighting the current period 2a##########################################
-if [[ $twoA == "1" ]]; then
-if [[ $firstperiod == "1" ]]; then
-echo "1                8:00       8:41 | color = black"
-else
-echo "1                8:00       8:41"
-fi
-if [[ $secondperiod == "1" ]]; then
-echo "2               8:44       9:24 | color = black"
-else
-echo "2               8:44       9:24"
-fi
-if [[ $homeroomperiod == "1" ]]; then
-echo "HR             9:28       9:37 | color = black"
-else
-echo "HR             9:28       9:37"
-fi
-if [[ $thirdperiod == "1" ]]; then
-echo "3               9:41      10:21 | color = black"
-else
-echo "3               9:41      10:21"
-fi
-if [[ $fourthperiod == "1" ]]; then
-echo "4              10:25      11:05 | color = black"
-else
-echo "4              10:25      11:05"
-fi
-if [[ $fifthperiod == "1" ]]; then
-echo "5              11:09      11:49 | color = black"
-else
-echo "5              11:09      11:49"
-fi
-if [[ $sixthperiod == "1" ]]; then
-echo "6              11:53      12:33 | color = black"
-else
-echo "6              11:53      12:33"
-fi
-if [[ $seventhperiod == "1" ]]; then
-echo "7               12:37       1:17 | color = black"
-else
-echo "7               12:37       1:17"
-fi
-if [[ $eighthperiod == "1" ]]; then
-echo "8                1:21       2:01 | color = black"
-else
-echo "8                1:21       2:01"
-fi
-if [[ $ninthperiod == "1" ]]; then
-echo "9               2:05       2:45 | color = black"
-else
-echo "9               2:05       2:45"
-fi
-fi
-#if [[ $tperiod == "1" ]]; then  #for testing
-#echo "t               d       m | color = black"
-#else
-#echo "t               d       m"
-#fi
-
-#fi

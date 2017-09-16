@@ -4,3 +4,4 @@ sed -i.bu '/threeABsh/ s/1/0/' /Users/Mike/Desktop/Media/bitbar/techtime.1s.sh
 sed -i.bu '/fiveAsh/ s/0/1/' /Users/Mike/Desktop/Media/bitbar/techtime.1s.sh
 sed -i.bu '/sixAsh/ s/1/0/' /Users/Mike/Desktop/Media/bitbar/techtime.1s.sh
 find /Users/Mike/Desktop/Media/bitbar/ -type f -name '*.sh.bu' -delete
+killall Terminal
