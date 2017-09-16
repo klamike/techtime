@@ -3,9 +3,9 @@ a bitbar plugin for sitech students for viewing the bell schedule
 
 ## how to install
 
-1) install [bitbar](https://getbitbar.com/)
-2) copy [alarmclock.1s.sh](https://github.com/klamike/techtime/blob/master/alarmclock.1s.sh) and [support](https://github.com/klamike/techtime/tree/master/support) into plugin directory
-3) done.
+1) download [techtime.app.zip](https://github.com/klamike/techtime/blob/master/techtime.app.zip)
+2) unzip and drag to /Applications/ folder
+3) done
 
 ## to do:
 
