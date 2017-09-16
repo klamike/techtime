@@ -9,5 +9,4 @@ a bitbar plugin for sitech students for viewing the bell schedule
 
 ## to do:
 
- - add a countdown to the next bell
  - add alternate bell schedules
