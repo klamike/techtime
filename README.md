@@ -9,4 +9,7 @@ a bitbar plugin for sitech students for viewing the bell schedule
 
 ## to do:
 
- - bundle as a single .app
+- make a gui for adding new bell schedules
+ - ~~add a countdown to the next bell~~
+ - ~~add alternate bell schedules~~
+ - ~~bundle as a single .app~~
