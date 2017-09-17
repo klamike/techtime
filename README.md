@@ -3,9 +3,10 @@ a bitbar plugin for sitech students for viewing the bell schedule
 ![](https://raw.githubusercontent.com/klamike/techtime/master/demopic.png)
 ## how to install
 
-1) download [techtime.zip](https://github.com/klamike/techtime/releases)
-2) unzip and drag to /Applications/ folder
-3) done
+1) download [techtime.dmg](https://github.com/klamike/techtime/releases)
+2) double-click techtime.dmg
+3) drag techtime.app to the Applications folder
+4) done!
 
 ## to do:
 
