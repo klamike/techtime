@@ -10,7 +10,7 @@ a bitbar plugin for sitech students for viewing the bell schedule
 ## to do:
 
 - make a gui for adding new bell schedules
-- make an installer that automatically puts techtime.app in /Applications/
+- ~~make an installer that automatically puts techtime.app in /Applications/~~
  - ~~add a countdown to the next bell~~
  - ~~add alternate bell schedules~~
  - ~~bundle as a single .app~~
