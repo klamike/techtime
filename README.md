@@ -12,7 +12,6 @@ a bitbar plugin for sitech students for viewing the bell schedule
 
 - make a gui for adding new bell schedules
 - make a subsubmenu for fire drill schedule selection
-- ~~make a dmg file for easy installation~~
  - ~~add a countdown to the next bell~~
  - ~~add alternate bell schedules~~
  - ~~bundle as a single .app~~
