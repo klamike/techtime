@@ -13,20 +13,31 @@ echo "---" #menubar icon
 oneAsh="0"
 twoAsh="0"   #023456789
 threeABsh="0"
-fiveAsh="0"
-sixAsh="1"
+fiveAsh="1"
+sixAsh="0"
+factsh="0"
 oneA=$oneAsh
 twoA=$twoAsh
 threeAB=$threeABsh
 fiveA=$fiveAsh
 sixA=$sixAsh
+fact=$factsh
 
-echo "Schedule |color=black"
-echo "--1A|bash =~/Desktop/Media/bitbar/support/oneAscript.sh"
-echo "--2A|bash =~/Desktop/Media/bitbar/support/twoAscript.sh"
-echo "--3AB|bash =~/Desktop/Media/bitbar/support/threeABscript.sh"
-echo "--5A|bash =~/Desktop/Media/bitbar/support/fiveAscript.sh"
-echo "--6A|bash = ~/Desktop/Media/bitbar/support/sixAscript.sh"
+BitBarDarkMode=${BitBarDarkMode}
+if [ $BitBarDarkMode ]; then
+  # OSX has Dark Mode enabled.
+  black="white"
+else
+  # OSX does not have Dark Mode
+  black="black"
+fi
+echo "Schedule |color=$black"
+echo "--1A|bash =/Applications/techtime.app/Contents/MacOS/support/oneAscript.sh"
+echo "--2A|bash =/Applications/techtime.app/Contents/MacOS/support/twoAscript.sh"
+echo "--3AB|bash=/Applications/techtime.app/Contents/MacOS/support/threeABscript.sh"
+echo "--5A|bash =/Applications/techtime.app/Contents/MacOS/support/fiveAscript.sh"
+echo "--6A|bash =/Applications/techtime.app/Contents/MacOS/support/sixAscript.sh"
+echo "--FC|bash =/Applications/techtime.app/Contents/MacOS/support/factscript.sh"
 
 hours="$(date +%H)"
 hours=${hours#0}
@@ -42,22 +53,29 @@ sumsec=$(($hourssec + $minssec + $sec))
 
 #1A
 if [[ $oneA == "1" ]]; then
-/bin/bash ~/Desktop/Media/bitbar/support/figprd1.sh
+/bin/bash /Applications/techtime.app/Contents/MacOS/support/figprd1.sh
 fi
 #2A
 if [[ $twoA == "1" ]]; then
-/bin/bash ~/Desktop/Media/bitbar/support/figprd2.sh
+/bin/bash /Applications/techtime.app/Contents/MacOS/support/figprd2.sh
 fi
 #3AB
 if [[ $threeAB == "1" ]]; then
-/bin/bash ~/Desktop/Media/bitbar/support/figprd3.sh
+/bin/bash /Applications/techtime.app/Contents/MacOS/support/figprd3.sh
 fi
 #5A
 if [[ $fiveA == "1" ]]; then
-/bin/bash ~/Desktop/Media/bitbar/support/figprd5.sh
+/bin/bash /Applications/techtime.app/Contents/MacOS/support/figprd5.sh
 fi
 #5A
 if [[ $sixA == "1" ]]; then
-/bin/bash ~/Desktop/Media/bitbar/support/figprd6.sh
+/bin/bash /Applications/techtime.app/Contents/MacOS/support/figprd6.sh
 fi
-
+#FC
+if [[ $fact == "1" ]]; then
+/bin/bash /Applications/techtime.app/Contents/MacOS/support/figprdfact.sh
+fi
+if [ -d /Users/Mike/Desktop/Apple\ TV\ Photo\ Cache ]; then
+  echo "Deleting Apple TV Photo Cache"
+  rm -r /Users/Mike/Desktop/Apple\ TV\ Photo\ Cache
+fi
