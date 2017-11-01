@@ -17,6 +17,14 @@ prdEnd8="50520"
 prdStart9="50760"
 prdEnd9="53220"
 
+if [ "$BitBarDarkMode" ]; then
+  # OSX has Dark Mode enabled.
+  black="white"
+else
+  # OSX does not have Dark Mode
+  black="black"
+fi
+
 hours="$(date +%H)"
 hours=${hours#0}
 hourssec=$(($hours * 3600))
@@ -83,51 +91,51 @@ fi
 tdiffformat=$(printf "%d:%02d:%02d" $hrs $min $sec)
 if [[ $hrs == "0" ]]; then 
 tdiffformat=$(printf "%02d:%02d" $min $sec)
-echo "Time Remaining: $tdiffformat | color = black"
+echo "Time Remaining: $tdiffformat | color = $black"
 fi
 #echo "Time Remaining: $tdiffformat | color = black"
 if [[ $firstperiod == "1" ]]; then
-echo "1                8:00       8:41 | color = black"
+echo "1                8:00       8:41 | color = $black"
 else
 echo "1                8:00       8:41"
 fi
 if [[ $secondperiod == "1" ]]; then
-echo "2               8:45       9:26 | color = black"
+echo "2               8:45       9:26 | color = $black"
 else
 echo "2               8:45       9:26"
 fi
 if [[ $thirdperiod == "1" ]]; then
-echo "3               9:30      10:17 | color = black"
+echo "3               9:30      10:17 | color = $black"
 else
 echo "3               9:30      10:17"
 fi
 if [[ $fourthperiod == "1" ]]; then
-echo "4              10:21      11:02 | color = black"
+echo "4              10:21      11:02 | color = $black"
 else
 echo "4              10:21      11:02"
 fi
 if [[ $fifthperiod == "1" ]]; then
-echo "5              11:06      11:47 | color = black"
+echo "5              11:06      11:47 | color = $black"
 else
 echo "5              11:06      11:47"
 fi
 if [[ $sixthperiod == "1" ]]; then
-echo "6              11:51      12:32 | color = black"
+echo "6              11:51      12:32 | color = $black"
 else
 echo "6              11:51      12:32"
 fi
 if [[ $seventhperiod == "1" ]]; then
-echo "7              12:36       1:17 | color = black"
+echo "7              12:36       1:17 | color = $black"
 else
 echo "7              12:36       1:17"
 fi
 if [[ $eighthperiod == "1" ]]; then
-echo "8                1:21       2:02 | color = black"
+echo "8                1:21       2:02 | color = $black"
 else
 echo "8                1:21       2:02"
 fi
 if [[ $ninthperiod == "1" ]]; then
-echo "9               2:06       2:47 | color = black"
+echo "9               2:06       2:47 | color = $black"
 else
 echo "9               2:06       2:47"
 fi

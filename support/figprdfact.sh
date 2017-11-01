@@ -1,23 +1,23 @@
 prdStart1="28800"
-prdEnd1="31080"
-prdStart2="31320"
-prdEnd2="33600"
-prdStart3="33840"
-prdEnd3="36240"
-prdStart4="36480"
-prdEnd4="38760"
-prdStart5="39000"
-prdEnd5="41280"
-prdStart6="41520"
-prdEnd6="43800"
-prdStart7="44040"
-prdEnd7="46320"
-prdStartevac="46320"
-prdEndevac="48180"
-prdStart8="48420"
-prdEnd8="50700"
-prdStart9="50940"
-prdEnd9="53220"
+prdEnd1="30840"
+prdStart2="31080"
+prdEnd2="33120"
+prdStart3="33360"
+prdEnd3="35700"
+prdStart4="35940"
+prdEnd4="37980"
+prdStart5="38220"
+prdEnd5="40260"
+prdStart6="40500"
+prdEnd6="42540"
+prdStart7="42780"
+prdEnd7="44820"
+prdStart8="45060"
+prdEnd8="47100"
+prdStart9="47340"
+prdEnd9="49380"
+prdStartFC="49620"
+prdEndFC="53220"
 
 if [ "$BitBarDarkMode" ]; then
   # OSX has Dark Mode enabled.
@@ -75,11 +75,6 @@ if [[ ! $(( sumsec )) < "$prdStart7" && ! $(( sumsec )) > "$prdEnd7" ]]; then
 seventhperiod="1"
 tdiff=$((prdEnd7 - sumsec))
 fi
-#prdevac
-if [[ ! $(( sumsec )) < "$prdStartevac" && ! $(( sumsec )) > "$prdEndevac" ]]; then
-evacperiod="1"
-tdiff=$((prdEndevac - sumsec))
-fi
 #prd8
 if [[ ! $(( sumsec )) < "$prdStart8" && ! $(( sumsec )) > "$prdEnd8" ]]; then
 eighthperiod="1"
@@ -89,6 +84,11 @@ fi
 if [[ ! $(( sumsec )) < "$prdStart9" && ! $(( sumsec )) > "$prdEnd9" ]]; then
 ninthperiod="1"
 tdiff=$((prdEnd9 - sumsec))
+fi
+#prdfc
+if [[ ! $(( sumsec )) < "$prdStartFC" && ! $(( sumsec )) > "$prdEndFC" ]]; then
+fcperiod="1"
+tdiff=$((preEndFC - sumsec))
 fi
 ##prdt for testing
 #if [[ ! $(( sumsec )) < "$prdStartt" && ! $(( sumsec )) > "$prdEndt" ]]; then
@@ -108,52 +108,52 @@ fi
 
 ########################Highlighting the current period 2a##########################################
 if [[ $firstperiod == "1" ]]; then
-echo "1                8:00       8:38 | color = $black"
+echo "1                8:00       8:34 | color = $black"
 else
-echo "1                8:00       8:38"
+echo "1                8:00       8:34"
 fi
 if [[ $secondperiod == "1" ]]; then
-echo "2               8:42	      9:20 | color = $black"
+echo "2               8:38	      9:12 | color = $black"
 else
-echo "2               8:42	      9:20"
+echo "2               8:38	      9:12"
 fi
 if [[ $thirdperiod == "1" ]]; then
-echo "3               9:24	     10:04 | color = $black"
+echo "3               9:16	      9:55 | color = $black"
 else
-echo "3               9:24	     10:04"
+echo "3               9:16	      9:55"
 fi
 if [[ $fourthperiod == "1" ]]; then
-echo "4              10:08      10:46 | color = $black"
+echo "4               9:59      10:33 | color = $black"
 else
-echo "4              10:08      10:46"
+echo "4               9:59      10:33"
 fi
 if [[ $fifthperiod == "1" ]]; then
-echo "5              10:50      11:28 | color = $black"
+echo "5              10:37      11:11 | color = $black"
 else
-echo "5              10:50      11:28"
+echo "5              10:37      11:11"
 fi
 if [[ $sixthperiod == "1" ]]; then
-echo "6              11:32      12:10 | color = $black"
+echo "6              11:15      11:49 | color = $black"
 else
-echo "6              11:32      12:10"
+echo "6              11:15      11:49"
 fi
 if [[ $seventhperiod == "1" ]]; then
-echo "7               12:14       12:52 | color = $black"
+echo "7               11:53       12:27 | color = $black"
 else
-echo "7               12:14       12:52"
-fi
-if [[ $evacperiod == "1" ]]; then
-echo "HR             12:52       1:23 | color = $black"
-else
-echo "HR             12:52       1:23"
+echo "7               11:53       12:27"
 fi
 if [[ $eighthperiod == "1" ]]; then
-echo "8                1:27       2:05 | color = $black"
+echo "8             12:31       1:05 | color = $black"
 else
-echo "8                1:27       2:05"
+echo "8             12:31       1:05"
 fi
 if [[ $ninthperiod == "1" ]]; then
-echo "9               2:09       2:47 | color = $black"
+echo "9               1:09       1:43 | color = $black"
 else
-echo "9               2:09       2:47"
+echo "9               1:09       1:43"
+fi
+if [[ $fcperiod == "1" ]]; then
+echo "FC              1:47       2:47 | color = $black"
+else
+echo "FC              1:47       2:47"
 fi
