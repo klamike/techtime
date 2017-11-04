@@ -75,7 +75,3 @@ fi
 if [[ $fact == "1" ]]; then
 /bin/bash /Applications/techtime.app/Contents/MacOS/support/figprdfact.sh
 fi
-if [ -d /Users/Mike/Desktop/Apple\ TV\ Photo\ Cache ]; then
-  echo "Deleting Apple TV Photo Cache"
-  rm -r /Users/Mike/Desktop/Apple\ TV\ Photo\ Cache
-fi
