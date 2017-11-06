@@ -9,9 +9,9 @@ echo "| templateImage=iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs
 echo "---" #menubar icon
 #echo "Bell Schedule | color=black"
 #current time in unix time
-#SCHEDULE SELECT#################################################################################
+#SCHEDULE SELECT
 oneAsh="0"
-twoAsh="0"   #023456789
+twoAsh="0" 
 threeABsh="0"
 fiveAsh="1"
 sixAsh="0"
