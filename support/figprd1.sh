@@ -130,9 +130,9 @@ else
 echo "7     12:36    1:17 | font = courier size = 14"
 fi
 if [[ $eighthperiod == "1" ]]; then
-echo "8     1:21     2:02 | color = $black font = courier"
+echo "8      1:21     2:02 | color = $black font = courier"
 else
-echo "8     1:21     2:02 | font = courier size = 14"
+echo "8      1:21     2:02 | font = courier size = 14"
 fi
 if [[ $ninthperiod == "1" ]]; then
 echo "9      2:06    2:47 | color = $black font = courier"
