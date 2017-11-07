@@ -108,52 +108,52 @@ fi
 
 ########################Highlighting the current period 2a##########################################
 if [[ $homeroomperiod == "1" ]]; then
-echo "HR             8:00       8:33 | color = $black"
+echo "HR      8:00     8:33 | color = $black font = courier size = 14"
 else
-echo "HR             8:00       8:33"
+echo "HR      8:00     8:33 | font = courier size = 14"
 fi
 if [[ $firstperiod == "1" ]]; then
-echo "1                8:37       9:14 | color = $black"
+echo "1       8:37     9:14 | color = $black font = courier size = 14"
 else
-echo "1                8:37       9:14"
+echo "1       8:37     9:14 | font = courier size = 14"
 fi
 if [[ $secondperiod == "1" ]]; then
-echo "2               9:18       9:55 | color = $black"
+echo "2       9:18     9:55 | color = $black font = courier size = 14"
 else
-echo "2               9:18       9:55"
+echo "2       9:18     9:55 | font = courier size = 14"
 fi
 if [[ $thirdperiod == "1" ]]; then
-echo "3               9:59      10:36 | color = $black"
+echo "3       9:59    10:36 | color = $black font = courier size = 14"
 else
-echo "3               9:59      10:36"
+echo "3       9:59    10:36 | font = courier size = 14"
 fi
 if [[ $fourthperiod == "1" ]]; then
-echo "4              10:40      11:18 | color = $black"
+echo "4      10:40    11:18 | color = $black font = courier size = 14"
 else
-echo "4              10:40      11:18"
+echo "4      10:40    11:18 | font = courier size = 14"
 fi
 if [[ $fifthperiod == "1" ]]; then
-echo "5              11:22      12:00 | color = $black"
+echo "5      11:22    12:00 | color = $black font = courier size = 14"
 else
-echo "5              11:22      12:00"
+echo "5      11:22    12:00 | font = courier size = 14"
 fi
 if [[ $sixthperiod == "1" ]]; then
-echo "6              12:04      12:42 | color = $black"
+echo "6      12:04    12:42 | color = $black font = courier size = 14"
 else
-echo "6              12:04      12:42"
+echo "6      12:04    12:42 | font = courier size = 14"
 fi
 if [[ $seventhperiod == "1" ]]; then
-echo "7               12:46       1:08 | color = $black"
+echo "7      12:46     1:08 | color = $black font = courier size = 14"
 else
-echo "7               12:46       1:08"
+echo "7      12:46     1:08 | font = courier size = 14"
 fi
 if [[ $eighthperiod == "1" ]]; then
-echo "8                1:27       2:04 | color = $black"
+echo "8       1:27     2:04 | color = $black font = courier size = 14"
 else
-echo "8                1:27       2:04"
+echo "8       1:27     2:04 | font = courier size = 14"
 fi
 if [[ $ninthperiod == "1" ]]; then
-echo "9               2:08       2:45 | color = $black"
+echo "9       2:08     2:45 | color = $black font = courier size = 14"
 else
-echo "9               2:08       2:45"
+echo "9       2:08     2:45 | font = courier size = 14"
 fi

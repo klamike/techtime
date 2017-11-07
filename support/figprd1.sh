@@ -95,47 +95,47 @@ echo "Time Remaining: $tdiffformat | color = $black"
 fi
 #echo "Time Remaining: $tdiffformat | color = black"
 if [[ $firstperiod == "1" ]]; then
-echo "1                8:00       8:41 | color = $black"
+echo "1      8:00    8:41 | color = $black font = courier size = 14"
 else
-echo "1                8:00       8:41"
+echo "1      8:00    8:41 | font = courier size = 14"
 fi
 if [[ $secondperiod == "1" ]]; then
-echo "2               8:45       9:26 | color = $black"
+echo "2      8:45    9:26 | color = $black font = courier size = 14"
 else
-echo "2               8:45       9:26"
+echo "2      8:45    9:26 | font = courier size = 14"
 fi
 if [[ $thirdperiod == "1" ]]; then
-echo "3               9:30      10:17 | color = $black"
+echo "3      9:30   10:17 | color = $black font = courier size = 14"
 else
-echo "3               9:30      10:17"
+echo "3      9:30   10:17 | font = courier size = 14"
 fi
 if [[ $fourthperiod == "1" ]]; then
-echo "4              10:21      11:02 | color = $black"
+echo "4     10:21   11:02 | color = $black font = courier size = 14"
 else
-echo "4              10:21      11:02"
+echo "4     10:21   11:02 | font = courier size = 14"
 fi
 if [[ $fifthperiod == "1" ]]; then
-echo "5              11:06      11:47 | color = $black"
+echo "5     11:06   11:47 | color = $black font = courier"
 else
-echo "5              11:06      11:47"
+echo "5     11:06   11:47 | font = courier size = 14"
 fi
 if [[ $sixthperiod == "1" ]]; then
-echo "6              11:51      12:32 | color = $black"
+echo "6     11:51   12:32 | color = $black font = courier"
 else
-echo "6              11:51      12:32"
+echo "6     11:51   12:32 | font = courier size = 14"
 fi
 if [[ $seventhperiod == "1" ]]; then
-echo "7              12:36       1:17 | color = $black"
+echo "7     12:36    1:17 | color = $black font = courier"
 else
-echo "7              12:36       1:17"
+echo "7     12:36    1:17 | font = courier size = 14"
 fi
 if [[ $eighthperiod == "1" ]]; then
-echo "8                1:21       2:02 | color = $black"
+echo "8     1:21     2:02 | color = $black font = courier"
 else
-echo "8                1:21       2:02"
+echo "8     1:21     2:02 | font = courier size = 14"
 fi
 if [[ $ninthperiod == "1" ]]; then
-echo "9               2:06       2:47 | color = $black"
+echo "9      2:06    2:47 | color = $black font = courier"
 else
-echo "9               2:06       2:47"
+echo "9      2:06    2:47 | font = courier size = 14"
 fi
